@@ -1,0 +1,23 @@
+* tools
+** cross-compile
+*** binutils
+**** configure 
+     --prefix=${PREFIX} --target=${TARGET} 
+     --with-sysroot --disable-nls --disable-werror
+**** compile
+     make
+**** install
+     make install
+*** gcc
+**** configure
+     --prefix=${PREFIX} --target=${TARGET} 
+     --disable-nls --enable-languages=c,c++ --without-headers
+**** compile
+     make all-gcc
+     make all-target-libgcc
+**** install
+     make install-gcc
+     make install-target-libgcc
+** linker
+* boot
+* kernel
